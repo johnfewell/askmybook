@@ -9,6 +9,8 @@ from .models import Question
 import pandas as pd
 import openai
 import numpy as np
+from dotenv import load_dotenv
+load_dotenv('.env')
 
 from resemble import Resemble
 
@@ -18,6 +20,9 @@ Resemble.api_key(os.environ["RESEMBLE_API_KEY"])
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
 COMPLETIONS_MODEL = "text-davinci-003"
+
+
+
 
 MODEL_NAME = "curie"
 

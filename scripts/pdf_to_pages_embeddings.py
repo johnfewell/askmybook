@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 # Use load_env to trace the path of .env:
 load_dotenv('.env')
