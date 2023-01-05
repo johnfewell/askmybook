@@ -8,12 +8,12 @@
     <a href="https://www.amazon.com/Minimalist-Entrepreneur-Great-Founders-More/dp/0593192397">
       <img src="{% static 'book.png' %}" loading="lazy" />
     </a>
-    <h1>Ask My Book</h1>
+    <h1>Ask My Angular Book</h1>
   </div>
 </div>
 
 <div class="main">
-  <p class="credits">This is an experiment in using AI to make my book's content more accessible. Ask a question and AI'll answer it in real-time:</p>
+  <p class="credits">This is an experiment in using AI to make a book about Angular's content more accessible. Ask a question and AI'll answer it in real-time:</p>
 
   <form action="/ask" method="post">
     {% csrf_token %}
@@ -21,7 +21,6 @@
 
     <div class="buttons" {% if answer %}style="display: none"{% endif %}>
       <button type="submit" id="ask-button">Ask question</button>
-      <button id="lucky-button" style="background: #eee; border-color: #eee; color: #444;" data>I'm feeling lucky</button>
     </div>
   </form>
 
@@ -123,8 +122,8 @@
   });
 </script>
 
-<footer>
+<!-- <footer>
   <p class="credits">Project by <a href="https://twitter.com/shl">Sahil Lavingia</a> • <a href="https://github.com/slavingia/askmybook">Fork on GitHub</a></a></p>
-</footer>
+</footer> -->
 
 {% endblock %}

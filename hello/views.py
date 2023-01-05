@@ -112,7 +112,7 @@ def construct_prompt(question: str, context_embeddings: dict, df: pd.DataFrame) 
         chosen_sections.append(SEPARATOR + document_section.content)
         chosen_sections_indexes.append(str(section_index))
 
-    header = """This is a book about the Angular JavaScript framwork. Please speak in complete sentences. Stop speaking once your point is made.\n\nContext that may be useful, pulled from The :\n"""
+    header = """This is a book about the Angular JavaScript framwork. Please speak in complete sentences. Stop speaking once your point is made. Answer the question as truthfully as possible, and if you're unsure of the answer, say "Sorry, I don't know".\n\nContext that may be useful:\n"""
 
     question_1 = "\n\n\nQ: What is Angular?\n\nA: Angular is a development platform, built on TypeScript. As a platform, Angular includes: A component-based framework for building scalable web applications. A collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more. A suite of developer tools to help you develop, build, test, and update your code"
     question_2 = "\n\n\nQ: What are the basics I need to understand Angular?\n\nA: To understand the capabilities of the Angular framework, you need to learn about the following: Components, Templates, Directives, and Dependency injection"
@@ -149,7 +149,7 @@ def answer_query_with_context(
     return response["choices"][0]["text"].strip(" \n"), context
 
 def index(request):
-    return render(request, "index.html", { "default_question": "What is The Minimalist Entrepreneur about?" })
+    return render(request, "index.html", { "default_question": "Why should I use Angular?" })
 
 @csrf_exempt
 def ask(request):
